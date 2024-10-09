@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+
+class Counter extends StatelessWidget {
+  const Counter({super.key});
+//from statefullWidget to stateLessWidget
+//remove the class state and setState method
+//then add this function
+//remove the cons counter
+//
+void callback(){ //add this method to callBack function, and callBack of the widget
+  print('Pressed');
+
+}
+   @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        ElevatedButton(
+          onPressed: callback,
+          child: const Text('BUTTON'), // 
+        ),
+      ],
+    );
+  }
+}
+
+void main() {
+  runApp(
+    const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Counter(),
+        ),
+      ),
+    ),
+  );
+}
